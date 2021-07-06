@@ -2,7 +2,7 @@ package domain
 
 import (
 	"time"
-	UUid "github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
 // Methods to persist data as an interfaces
@@ -13,7 +13,7 @@ type TransactionRepository interface {
 
 }
 
-type Transaction struc{
+type Transaction struct {
 	ID string
 	Amount float64
 	Status string
@@ -24,7 +24,7 @@ type Transaction struc{
 }
 
 func NewTransaction() *Transaction {
-	t:= Transaction{}
+	t:= &Transaction{}
 	t.ID = uuid.NewV4().String()
 	t.CreatedAt = time.Now()
 	return t

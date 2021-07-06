@@ -2,10 +2,10 @@ package domain
 
 import (
 	"time"
-	UUid "github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
-type CreditCard struc {
+type CreditCard struct {
 	ID string
 	Name string
 	Number string
@@ -17,8 +17,8 @@ type CreditCard struc {
 	CreatedAt time.Time
 }
 
-func NewCreditCard() CreditCard {
-	c := CreditCard{}
+func NewCreditCard() *CreditCard {
+	c := &CreditCard{}
 	c.ID = uuid.NewV4().String()
 	c.CreatedAt = time.Now()
 	return c
